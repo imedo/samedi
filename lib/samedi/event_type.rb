@@ -13,5 +13,9 @@ module Samedi
     def self.find_by_event_category_id(event_category_id)
       find_every :params => { :event_category_id => event_category_id }
     end
+    
+    def self.find_by_healer_id(healer_id)
+      find_every :params => { :healer_id => healer_id }
+    end
   end
 end
