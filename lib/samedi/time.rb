@@ -1,5 +1,5 @@
 module Samedi
-  class Date < ActiveResource::Base
+  class Time < ActiveResource::Base
     include Samedi::Common
     
     def self.find_by_event_category_id_and_event_type_id(event_category_id, event_type_id, options = {})
