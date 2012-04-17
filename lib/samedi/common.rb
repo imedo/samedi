@@ -1,13 +1,13 @@
 module Samedi
   module Common
     def self.included(receiver)
-      receiver.site = 'https://www.samedi.de/api/booking/v3'
+      receiver.site = "https://www.samedi.de/api/booking/v3"
       receiver.format = :json
-      
+
       receiver.extend ClassMethods
       (class << receiver; self; end).send :alias_method_chain, :query_string, :client_id
     end
-    
+
     module ClassMethods
     private
       def query_string_with_client_id(options)
@@ -33,7 +33,7 @@ module Samedi
           nil
         end
       end
-      
+
       def collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
         "#{prefix(prefix_options)}#{collection_name}#{query_string(query_options)}"
