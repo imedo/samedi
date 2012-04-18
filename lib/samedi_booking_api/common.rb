@@ -1,4 +1,4 @@
-module Samedi
+module SamediBookingApi
   module Common
     def self.included(receiver)
       receiver.site = "https://www.samedi.de/api/booking/v3"
@@ -11,7 +11,7 @@ module Samedi
     module ClassMethods
     private
       def query_string_with_client_id(options)
-        query_string_without_client_id(options.merge(:client_id => Samedi.client_id))
+        query_string_without_client_id(options.merge(:client_id => SamediBookingApi.client_id))
       end
 
       def find_every(options)
